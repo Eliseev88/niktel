@@ -1,76 +1,75 @@
+# React + TypeScript + Vite
 
-# Niktel — Digital Solutions for Modern Businesses
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Delivering secure, scalable, and user-focused digital products for enterprises and startups.
+Currently, two official plugins are available:
 
-## What We Do
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-We design, build, and operate high-quality software and cloud solutions that help organizations accelerate innovation and reduce operational risk.
+## React Compiler
 
-- **Product Engineering:** Web, mobile, and backend systems built for reliability and scale.
-- **Cloud & DevOps:** Cloud migration, infrastructure as code, CI/CD and cost optimization.
-- **Data & AI:** Analytics pipelines, data platforms, and ML model delivery.
-- **Security & Compliance:** Secure-by-design applications, audits, and continuous monitoring.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Value Proposition
+## Expanding the ESLint configuration
 
-- **Outcome-focused:** We align technology with business KPIs — faster time-to-market, higher retention, lower TCO.
-- **Practical expertise:** Senior engineers, pragmatic architectures, and production-proven practices.
-- **Transparent collaboration:** Regular demos, clear milestones, and shared ownership.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Landing Page Goals
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-This repository contains assets and copy for a marketing landing page that communicates our services, expertise, and call-to-action (contact/demo request).
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-Primary goals:
-- Present core services and differentiators clearly.
-- Encourage visitors to request a demo or consultation.
-- Provide social proof and technical credibility.
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 
-## Structure & Content Notes
-
-- **Hero:** Strong headline, 1–2 sentence subhead, and a primary CTA (Request a Demo).
-- **Services / Capabilities:** Short cards or rows highlighting key offerings.
-- **Why Choose Us:** Outcomes, process, and client logos or testimonials.
-- **Case Studies / Projects:** Short summaries that link to full case studies.
-- **Tech Stack & Security:** List primary technologies and compliance posture.
-- **Contact / Footer:** Clear CTA, contact form or calendar link, and legal links.
-
-## Technologies (suggested)
-
-- Frontend: HTML5, CSS3, modern JS (React / Vue / Svelte as preferred)
-- Styling: Tailwind CSS or custom responsive CSS
-- Hosting: Vercel, Netlify, GitHub Pages, or any static host behind a CDN
-- Analytics: Google Analytics / Plausible, and privacy-friendly consent
-
-## Local Preview
-
-To preview the static landing page locally, you can use a simple static server. From the project root:
-
-```bash
-# using Python 3
-python3 -m http.server 8000
-
-# or using npm package 'serve'
-npx serve .
 ```
 
-Then open http://localhost:8000 in your browser.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## Content & Branding Guidelines
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- Keep headlines concise and benefit-driven.
-- Use customer-focused language (outcomes, metrics) rather than internal process detail.
-- Provide high-contrast accessible color palettes and alt text for images.
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 
-## Assets
-
-Place logos, screenshots, and media in the `assets/` folder. Include optimized SVGs for logos and compressed PNG/WebP for screenshots.
-
-## Contact
-
-Interested in a partnership or demo? Email sales@niktel.example or use the contact form on the site.
-
-## License
-
-This repository contains marketing and design assets. Reuse within the company is permitted; third-party redistribution requires approval.
+```
