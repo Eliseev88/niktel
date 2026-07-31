@@ -1,9 +1,18 @@
+import { Suspense } from 'react'
 import './styles/App.css'
+import Header from './components/Header'
+import Intro from './components/Intro'
 
 function App() {
   return (
     <>
-      test
+      <Suspense fallback="">
+        <Header />
+        <main className="main">
+          <div className="background"></div>
+          <Intro />
+        </main>
+      </Suspense>
     </>
   )
 }
