@@ -16,5 +16,5 @@
 	height: 100%;
 	z-index: -1;
 	background: url('../assets/images/background_prolapse.jpg') no-repeat center center;
-	background-size: contain;
+	background-size: cover;
 }

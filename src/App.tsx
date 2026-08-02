@@ -5,6 +5,7 @@ import Intro from './components/Intro'
 import Partners from './components/Partners'
 import Statisctics from './components/Statisctics'
 import Company from './components/Company'
+import Competence from './components/Competence'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Partners />
           <Statisctics />
           <Company />
+          <Competence />
         </main>
       </Suspense>
     </>
