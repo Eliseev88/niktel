@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Intro from './components/Intro'
 import Partners from './components/Partners'
 import Statisctics from './components/Statisctics'
+import Company from './components/Company'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Intro />
           <Partners />
           <Statisctics />
+          <Company />
         </main>
       </Suspense>
     </>

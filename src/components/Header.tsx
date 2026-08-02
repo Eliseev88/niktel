@@ -16,7 +16,7 @@ function Header() {
           <nav className="nav">
             <ul className="nav__list">
               <li className="nav__element">
-                <a href="#about" className="link">
+                <a href="#company" className="link">
                   {t("О компании")}
                 </a>
               </li>
