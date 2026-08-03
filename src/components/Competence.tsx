@@ -49,16 +49,19 @@ function Competence() {
 						{competenceItems.map((item, index) => (
 							<div className="competence__item" key={item.alt}>
 								<div className="competence__type" dangerouslySetInnerHTML={{ __html: item.type }} />
-								<div className="competence__icon-wrp">
-									<img
-										src={item.src}
-										alt={item.alt}
-										className={`competence__icon ${isVisible ? 'competence__icon--animated' : ''}`}
-										style={{ animationDelay: `${index * 120}ms` }}
-									/>
+								<button className="competence__btn">Узнать больше</button>
+								<div
+								className="competence__icon-wrp">
+									<div className={`${isVisible ? 'competence__icon--animated' : ''}`}
+										style={{ animationDelay: `${index * 120}ms` }}>
+										<img
+											src={item.src}
+											alt={item.alt}
+											className="competence__icon"
+										/>
+									</div>
 								</div>
 								<div className="competence__description" dangerouslySetInnerHTML={{ __html: item.description }} />
-								<button className="competence__btn">Узнать больше</button>
 							</div>
 						))}
 					</div>
