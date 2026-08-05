@@ -1,0 +1,90 @@
+.popup {
+	height: 894px;
+}
+
+.popup__header {
+	padding: 80px 0 50px;
+	background-color: var(--color-tertiary);
+	text-align: center;
+}
+
+.popup__title {
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: var(--text-size-xl);
+	line-height: 100%;
+	letter-spacing: 0px;
+}
+
+.popup__subtitle {
+	font-weight: 400;
+	font-size: var(--text-size-md);
+	line-height: 100%;
+	letter-spacing: 2px;
+	color: var(--color-secondary);
+}
+
+.popup__content {
+	padding: 50px;
+	position: relative;
+	overflow: hidden;
+	height: 680px;
+}
+
+.popup__content::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../assets/images/background_stars2.png') no-repeat center;
+	background-size: cover;
+	transform: scale(1);
+	animation: popup-background-scale 0.9s ease forwards;
+	z-index: 0;
+}
+
+
+.popup__wrapper {
+	height: 100%;
+}
+.popup__content .wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+@keyframes popup-background-scale {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.5);
+	}
+}
+
+.popup__btn {
+	padding: 12px 65px;
+	width: 224px;
+	height: 50px;
+	outline: none;
+	border: 1px solid rgba(76, 158, 203, 1);
+	border-radius: 100px;
+	background-color: transparent;
+	color: rgba(76, 158, 203, 1);
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 26px;
+	letter-spacing: 0px;
+
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.popup__btn:hover {
+	background-color: rgba(76, 158, 203, 1);
+	color: var(--color-tertiary);
+}

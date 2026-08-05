@@ -5,7 +5,6 @@
 
 .main {
 	min-height: calc(100vh - 71px);
-	height: 10000px;
 }
 
 .background {
@@ -15,6 +14,6 @@
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background: url('../assets/images/background_prolapse.jpg') no-repeat center center;
+	background: linear-gradient(rgba(0, 117, 181, 0.5), rgba(0, 117, 181, 0.5)), url('../assets/images/background_prolapse.jpg') no-repeat center center;
 	background-size: cover;
 }

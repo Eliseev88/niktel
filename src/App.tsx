@@ -6,6 +6,8 @@ import Partners from './components/Partners'
 import Statisctics from './components/Statisctics'
 import Company from './components/Company'
 import Competence from './components/Competence'
+import Contacts from './components/Contacts'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
           <Statisctics />
           <Company />
           <Competence />
+          <Contacts />
         </main>
+        <Footer />
       </Suspense>
     </>
   )

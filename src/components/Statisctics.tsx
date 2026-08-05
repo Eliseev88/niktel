@@ -56,7 +56,7 @@ function Statisctics() {
 	}, [hasAnimated]);
 
 	return (
-		<section ref={sectionRef} id="statistics" className="statistics">
+		<section ref={sectionRef} id="company" className="statistics">
 			<div className="wrapper">
 				<div className="statistics__container">
 					{statisticsData.map((item, index) => (

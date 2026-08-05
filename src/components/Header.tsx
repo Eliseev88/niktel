@@ -10,7 +10,7 @@ function Header() {
     <header className="header">
       <div className="wrapper">
         <div className="header__wrp">
-          <a className="header__link-logo" href="#intro">
+          <a className="header__link-logo" href="/">
             <img src={LOGO} alt="Niktel Logo" className='header__logo' />
           </a>
           <nav className="nav">
