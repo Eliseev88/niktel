@@ -1,7 +1,9 @@
 import '../styles/Footer.css'
 import logo from '../assets/icons/niktel_light.svg'
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+	const { t } = useTranslation();
 	const year = new Date().getFullYear();
 
 	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, type: string) => {
@@ -28,21 +30,21 @@ function Footer() {
 				</div>
 				<div className="footer__menu">
 					<div className="footer__column">
-						<div className='footer__title'>Навигация</div>
+						<div className='footer__title'>{t("Навигация")}</div>
 						<ul>
-							<li><a href="#company">О компании</a></li>
-							<li><a href="#competence">Наши компетенции</a></li>
-							<li><a href="#contacts">Контакты</a></li>
+							<li><a href="#company">{t("О компании")}</a></li>
+							<li><a href="#competence">{t("Наши компетенции")}</a></li>
+							<li><a href="#contacts">{t("Контакты")}</a></li>
 						</ul>
 					</div>
 
 					<div className="footer__column">
-						<div className='footer__title'>Продукты</div>
+						<div className='footer__title'>{t("Продукты")}</div>
 						<ul>
-							<li><a href="#competence" onClick={(e) => handleClick(e, 'Системная интеграция')}>Системная интеграция</a></li>
-							<li><a href="#competence" onClick={(e) => handleClick(e, 'Инженерные системы')}>Инженерные системы</a></li>
-							<li><a href="#competence" onClick={(e) => handleClick(e, 'Информационная безопасность')}>Информационная безопасность</a></li>
-							<li><a href="#competence" onClick={(e) => handleClick(e, 'Разработка ПО')}>Разработка ПО</a></li>
+							<li><a href="#competence" onClick={(e) => handleClick(e, 'Системная интеграция')}>{t("Системная интеграция")}</a></li>
+							<li><a href="#competence" onClick={(e) => handleClick(e, 'Инженерные системы')}>{t("Инженерные системы")}</a></li>
+							<li><a href="#competence" onClick={(e) => handleClick(e, 'Информационная безопасность')}>{t("Информационная безопасность")}</a></li>
+							<li><a href="#competence" onClick={(e) => handleClick(e, 'Разработка ПО')}>{t("Разработка ПО")}</a></li>
 						</ul>
 					</div>
 				</div>

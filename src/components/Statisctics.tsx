@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import '../styles/Statistics.css';
+import { useTranslation } from "react-i18next";
 
 const statisticsData = [
-	{ value: 50, suffix: '+', label: 'Проектов завершено' },
-	{ value: 10, suffix: '+', label: 'Лет на рынке' },
-	{ value: 2015, suffix: '', label: 'Год основания' },
-	{ value: 24, suffix: '/7', label: 'Техническая поддержка' },
+	{ value: 50, suffix: '+', label: "Проектов завершено" },
+	{ value: 10, suffix: '+', label: "Лет на рынке" },
+	{ value: 2015, suffix: '', label: "Год основания" },
+	{ value: 24, suffix: '/7', label: "Техническая поддержка" },
 ];
 
 function Statisctics() {
+	const { t } = useTranslation();
 	const sectionRef = useRef<HTMLElement | null>(null);
 	const [hasAnimated, setHasAnimated] = useState(false);
 	const [counts, setCounts] = useState<number[]>(statisticsData.map(() => 0));
@@ -62,7 +64,7 @@ function Statisctics() {
 					{statisticsData.map((item, index) => (
 						<div key={item.label} className="statistics__item">
 							<div>{counts[index]}{item.suffix}</div>
-							<div>{item.label}</div>
+							<div>{t(item.label)}</div>
 						</div>
 					))}
 				</div>

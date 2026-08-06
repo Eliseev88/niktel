@@ -38,7 +38,7 @@ function Header() {
             </ul>
           </nav>
           <a href="tel:+74992815535" className="link link--phone">+7 (499) 281-55-35</a>
-          {/* <LangSwitcher /> */}
+          <LangSwitcher />
         </div>
       </div>
     </header>

@@ -1,9 +1,8 @@
-import { useContext, useState, type MouseEvent } from "react";
+import { useState, useEffect, useRef, type MouseEvent } from "react";
 import RU from '../assets/images/ru.png';
 import EN from '../assets/images/en.png';
 import '../styles/LangSwitcher.css';
 import { useTranslation } from "react-i18next";
-import { CollapseContext } from "../providers/CollapseContext.ts";
 
 type LangSwitcherProps = {
 	className?: string;
@@ -12,6 +11,7 @@ type LangSwitcherProps = {
 function LangSwitcher({ className }: LangSwitcherProps) {
 
 	const {i18n} = useTranslation();
+	const switcherRef = useRef<HTMLDivElement>(null);
 
 	let _currentLang = localStorage.getItem('i18nextLng');
 	const _userLanguage = window.navigator.language;
@@ -33,22 +33,31 @@ function LangSwitcher({ className }: LangSwitcherProps) {
 	const [secondLang, setSecondLang] = useState(_currentLang === 'RU' ? 'EN' : 'RU');
 	const [secondIcon, setSecondIcon] = useState(_currentLang === 'RU' ? EN : RU);
 
-	const collapseContext = useContext(CollapseContext);
-	const isCollapsed = typeof collapseContext === 'object' && collapseContext !== null
-		? collapseContext.isCollapsed
-		: false;
-	const toggleCollapse = typeof collapseContext === 'object' && collapseContext !== null
-		? collapseContext.toggleCollapse
-		: () => {};
+	const [isOpen, setIsOpen] = useState(false);
 
-	const changeVisibility = (e: MouseEvent) => {
+	// Close on outside click
+	useEffect(() => {
+		const handleClickOutside = (e: globalThis.MouseEvent) => {
+			if (switcherRef.current && !switcherRef.current.contains(e.target as Node)) {
+				setIsOpen(false);
+			}
+		};
+		if (isOpen) {
+			document.addEventListener('mousedown', handleClickOutside);
+		}
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [isOpen]);
+
+	const toggleOpen = (e: MouseEvent) => {
 		e.stopPropagation();
-		toggleCollapse(!isCollapsed);
-	}
+		setIsOpen(prev => !prev);
+	};
 
 	const changeLanguage = (e: MouseEvent) => {
 		e.stopPropagation();
-		if (isCollapsed) return;
+		if (!isOpen) return;
 
 		const lang = currentLang === 'RU' ? 'EN' : 'RU';
 		setSecondLang(currentLang);
@@ -59,22 +68,24 @@ function LangSwitcher({ className }: LangSwitcherProps) {
 		setCurrentIcon(icon);
 
 		i18n.changeLanguage(currentLang === 'RU' ? 'en' : 'ru');
-
-		toggleCollapse(!isCollapsed);
-	}
+		setIsOpen(false);
+	};
 
   return (
-	<div className={["langSwitcher", className].join(' ')}>
+	<div className={["langSwitcher", className].join(' ')} ref={switcherRef}>
 		<div className="langSwitcher__wrp">
-			<button className={["langSwitcher__btn", isCollapsed ? '' : '__open'].join(' ')} onClick={changeVisibility}>
+			<button
+				className={["langSwitcher__btn", isOpen ? '__open' : ''].join(' ')}
+				onClick={toggleOpen}
+			>
 				<span className="langSwitcher__element">
 					<img src={currentIcon} alt="lang" className="langSwitcher__img"/>
 					<span>{currentLang}</span>
 				</span>
-				<span className={isCollapsed ? '__hr __invisible' : '__hr'}/>
+				<span className={isOpen ? '__hr' : '__hr __invisible'}/>
 				<span
 					onClick={changeLanguage}
-					className={['langSwitcher__element', isCollapsed ? '__invisible' : '__visible'].join(' ')}
+					className={['langSwitcher__element', isOpen ? '__visible' : '__invisible'].join(' ')}
 				>
 					<img src={secondIcon} alt="lang" className="langSwitcher__img"/>
 					<span>{secondLang}</span>

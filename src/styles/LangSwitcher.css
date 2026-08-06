@@ -12,8 +12,8 @@
 	height: 34px;
 	border: none;
 	border-radius: 16px;
-	background-color: var(--color-label);
-	transition: all .3s ease-in-out;
+	background-color: rgba(0, 117, 181, 1);
+	transition: height .3s ease, transform .3s ease;
 	outline-width: 0;
 	outline-color: transparent;
 	font-size: var(--text-size-sm);
@@ -21,6 +21,12 @@
 	color: var(--color-tertiary);
 	letter-spacing: 0;
 	line-height: 20px;
+	overflow: hidden;
+	cursor: pointer;
+
+	position: absolute;
+	top: -17px;
+	right: -20px;
 }
 
 .langSwitcher__btn:active {
@@ -29,7 +35,6 @@
 
 .langSwitcher__btn.__open {
 	height: 67px;
-	transform: translateY(17px);
 }
 
 .langSwitcher__element {
@@ -44,11 +49,12 @@
 
 .__invisible {
 	opacity: 0;
+	transition: opacity .2s ease;
 }
 
 .__visible {
 	opacity: 1;
-	transition: opacity .2s linear;
+	transition: opacity .3s ease .1s;
 }
 
 .__hr {

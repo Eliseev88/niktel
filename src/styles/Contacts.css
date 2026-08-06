@@ -71,6 +71,10 @@
 	overflow: hidden;
 }
 
+.contacts__item {
+	height: 393.5px;
+}
+
 .contacts__item:nth-child(2) {
 	height: 190px;
 }
@@ -125,6 +129,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 14px;
 }
 
 .contacts__text {
@@ -136,6 +141,7 @@
 }
 
 .contacts__paragraph {
+	width: 280px;
 	font-weight: 400;
 	font-size: var(--text-size-sm);
 	line-height: 22px;

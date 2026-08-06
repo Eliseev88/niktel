@@ -1,8 +1,10 @@
 
 import type { ReactNode } from 'react';
 import '../styles/Popup.css';
+import { useTranslation } from "react-i18next";
 
 function Popup({ title, subtitle, description, onBack }: { title: string; subtitle: string; description: ReactNode; onBack: () => void }) {
+  const { t } = useTranslation();
   return (
 	<div className="popup">
 		<div className="popup__header">
@@ -14,7 +16,7 @@ function Popup({ title, subtitle, description, onBack }: { title: string; subtit
 		<div className="popup__content">
 			<div className="wrapper popup__wrapper">
 				{description}
-				<button className="popup__btn" onClick={onBack}>Вернуться</button>
+				<button className="popup__btn" onClick={onBack}>{t("Вернуться")}</button>
 			</div>
 		</div>
 	</div>
