@@ -88,3 +88,30 @@
 .partners__link:first-child .partners__image {
 	max-width: 72%;
 }
+
+@media (max-width: 1220px) {
+	.partners__title {
+		height: 163px;
+		font-size: 40px;
+		padding-left: 64px;
+		padding-right: 64px;
+		text-align: center;
+	}
+
+	.partners__list {
+		padding-top: 46px;
+		padding-bottom: 50px;
+	}
+
+	.partners__grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 32px;
+		justify-content: center;
+	}
+
+	.partners__link {
+		width: 200px;
+		height: 100px;
+	}
+}

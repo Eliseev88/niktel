@@ -17,3 +17,11 @@
 	background: linear-gradient(rgba(0, 117, 181, 0.5), rgba(0, 117, 181, 0.5)), url('../assets/images/background_prolapse.jpg') no-repeat center center;
 	background-size: cover;
 }
+
+@media (max-width: 1220px) {
+	.wrapper {
+		width: unset;
+		margin: unset;
+		padding: 0 64px;
+	}
+}

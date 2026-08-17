@@ -133,6 +133,7 @@
 }
 
 .contacts__text {
+	max-width: 275px;
 	font-weight: 500;
 	font-size: var(--text-size-md);
 	line-height: 26px;

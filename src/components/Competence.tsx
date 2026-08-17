@@ -35,7 +35,7 @@ function Competence() {
 	useEffect(() => {
 		const handler = (e: Event) => {
 			const { type } = (e as CustomEvent).detail || {};
-			const match = competenceItems.find((item) => item.type.includes(type));
+			const match = competenceItems.find((item) => item.alt.includes(type));
 			if (match) setActiveItem(match);
 		};
 		window.addEventListener('competence:open', handler);

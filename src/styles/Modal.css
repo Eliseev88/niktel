@@ -53,6 +53,27 @@
 	letter-spacing: 0px;
 }
 
+.modal__download {
+	display: flex;
+	gap: 15px;
+}
+
+.modal__download-btn {
+	padding: 16px 37px;
+	background-color: var(--color-accent);
+	color: var(--color-tertiary);
+	font-weight: 500;
+	font-size: 18px;
+	border: 1px solid var(--color-accent);
+	border-radius: 59px;
+	cursor: pointer;
+	transition: opacity .2s linear;
+}
+
+.modal__download-btn:hover {
+	opacity: .9;
+}
+
 .modal__grid {
 	display: grid;
 	grid-template-columns: 1.2fr 1fr;

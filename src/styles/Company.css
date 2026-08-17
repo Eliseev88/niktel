@@ -64,6 +64,11 @@
 	padding: 24px 5px 49px;
 }
 
+.company__item-wrp:nth-child(2)
+{
+	padding: 24px 18px 49px;
+}
+
 .company__item-title {
 	font-weight: 500;
 	font-size: var(--text-size-md);

@@ -58,6 +58,7 @@
 
   /* screen sizes */
   --screen-size: 1170px;
+  --screen-size-tablet: 1024px;
 }
 
 * {

@@ -64,3 +64,16 @@
 	background-color: var(--color-tertiary);
 	margin: 6px 0;
 }
+
+@media (max-width: 1220px) {
+	.langSwitcher__btn {
+		width: 93px;
+		height: 36px;
+		background-color: rgba(230, 242, 248, 1);
+		color: var(--color-accent);
+	}
+
+	.langSwitcher__element {
+		gap: 5px;
+	}
+}

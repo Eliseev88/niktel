@@ -1,8 +1,19 @@
 
 import { useTranslation } from "react-i18next";
+import '../../styles/Modal.css';
 
 function CompanyDetails() {
   const { t } = useTranslation();
+
+  const handleDownload = (fileName: string) => {
+	const link = document.createElement("a");
+	link.href = `/${fileName}`;
+	link.download = fileName;
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+  };
+
   return (
 	<>
 		<div className="modal__title-footer">{t("Реквизиты компании")}</div>
@@ -128,7 +139,11 @@ function CompanyDetails() {
 				</div>
 			</div>
 		</div>
-		<div className="modal__additional">{t("*Приказ Минцифры от 11.05.2023 г. № 449")}</div>
+			<div className="modal__additional">{t("*Приказ Минцифры от 11.05.2023 г. № 449")}</div>
+			<div className="modal__download">
+				<button className="modal__download-btn" onClick={() => handleDownload("Niktel.pdf")}>{t("Скачать в")} PDF</button>
+				<button className="modal__download-btn" onClick={() => handleDownload("Nitel.docx")}>{t("Скачать в")} DOC</button>
+			</div>
 	</>
   )
 }
