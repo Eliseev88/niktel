@@ -80,7 +80,7 @@
 
 @media (max-width: 760px) {
 	.intro {
-		height: 100dvh;
+		height: 100vh;
 		padding: 0 30px;
 		margin-bottom: 313px;
 	}
