@@ -124,12 +124,10 @@
 
 	.intro--en .intro__subtitle {
 		margin-left: 0;
-		font-size: 40px;
-		white-space: nowrap;
+		text-align: center;
 	}
 	
 	.intro--en .intro__title {
-		font-size: 40px;
 		text-align: center;
 	}
 
