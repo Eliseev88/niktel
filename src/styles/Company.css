@@ -60,7 +60,7 @@
 	height: 280px;
 }
 
-.company__item-img--mobileб
+.company__item-img--mobile,
 .company__mobile-header {
 	display: none;
 }
