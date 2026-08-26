@@ -89,6 +89,10 @@
 	max-width: 72%;
 }
 
+.partners__mobile-title {
+	display: none;
+}
+
 @media (max-width: 1220px) {
 	.partners__title {
 		height: 163px;
@@ -113,5 +117,30 @@
 	.partners__link {
 		width: 200px;
 		height: 100px;
+	}
+}
+
+@media (max-width: 760px) {
+	.partners__title {
+		display: none;
+	}
+
+	.partners__list {
+		padding-top: 40px;
+	}
+
+	.partners__list .wrapper {
+		padding: 0 30px;
+	}
+
+	.partners__mobile-title {
+		display: block;
+		margin: 0 auto 25px;
+		max-width: 251px;
+		text-align: center;
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 1.1;
+		letter-spacing: 1px;
 	}
 }

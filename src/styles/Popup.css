@@ -1,4 +1,5 @@
 .popup {
+	position: relative;
 	height: 894px;
 }
 
@@ -87,4 +88,65 @@
 .popup__btn:hover {
 	background-color: rgba(76, 158, 203, 1);
 	color: var(--color-tertiary);
+}
+
+.popup__close {
+	display: none;
+}
+
+@media (max-width: 1220px) {
+	.popup__btn {
+		display: none;
+	}
+
+	.popup__close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		width: 19px;
+		height: 19px;
+		padding: 0;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		z-index: 2;
+	}
+
+	.popup__close img {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+	.popup__header {
+		padding: 64px 0 50px;
+		height: 220px;
+	}
+
+	.popup__title {
+		margin-bottom: 10px;
+		font-size: 40px;
+	}
+
+	.popup__subtitle {
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+
+	.popup__content .wrapper {
+		padding: 0;
+	}
+}
+
+@media (max-width: 760px) {
+	.popup__header {
+		display: none;
+	}
+
+	.popup__content {
+		padding: 30px;
+	}
 }

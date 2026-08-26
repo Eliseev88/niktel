@@ -25,3 +25,9 @@
 		padding: 0 64px;
 	}
 }
+
+@media (max-width: 760px) {
+	.wrapper {
+		padding: 0 30px;
+	}
+}

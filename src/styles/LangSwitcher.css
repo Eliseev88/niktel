@@ -29,9 +29,9 @@
 	right: -20px;
 }
 
-.langSwitcher__btn:active {
+/* .langSwitcher__btn:active {
 	box-shadow: inset 0px 2px 2px 0 rgba(0, 0, 0, 15%);
-}
+} */
 
 .langSwitcher__btn.__open {
 	height: 67px;
@@ -75,5 +75,16 @@
 
 	.langSwitcher__element {
 		gap: 5px;
+	}
+
+	.__hr {
+		background-color: rgba(231, 231, 231, 1);
+	}
+}
+
+@media (max-width: 760px) {
+	.langSwitcher__wrp {
+		display: flex;
+		justify-content: center;
 	}
 }

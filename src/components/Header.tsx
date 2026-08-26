@@ -3,6 +3,7 @@ import '../styles/Header.css';
 import LOGO from '../assets/icons/niktel.svg';
 import BURGER from '../assets/icons/burger.svg';
 import BURGER_CLOSED from '../assets/icons/burger_closed.svg';
+import PHONE from '../assets/icons/phone.svg';
 import { useTranslation } from "react-i18next";
 import LangSwitcher from './LangSwitcher';
 
@@ -21,18 +22,27 @@ function Header() {
 	return () => mq.removeEventListener("change", handleChange);
   }, []);
 
+  useEffect(() => {
+	if (isMenuOpen) {
+		document.body.classList.add("menu-open");
+	} else {
+		document.body.classList.remove("menu-open");
+	}
+	return () => document.body.classList.remove("menu-open");
+  }, [isMenuOpen]);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   const navList = (
 	<ul className="nav__list">
 		<li className="nav__element">
 			<a href="#company" className="link" onClick={closeMenu}>
-				{t("О компании")}
+				{t("О\u00A0компании")}
 			</a>
 		</li>
 		<li className="nav__element">
 			<a href="#partners" className="link" onClick={closeMenu}>
-				{t("Наши партнеры и клиенты")}
+				{t("Наши партнеры и\u00A0клиенты")}
 			</a>
 		</li>
 		<li className="nav__element">
@@ -58,7 +68,10 @@ function Header() {
           <nav className="nav">
             {navList}
           </nav>
-          <a href="tel:+74992815535" className="link link--phone">+7 (499) 281-55-35</a>
+          <a href="tel:+74992815535" className="link link--phone">
+            <span className="link--phone__text">+7 (499) 281-55-35</span>
+            <img src={PHONE} alt="" className="link--phone__icon" />
+          </a>
           {!isMobile && <LangSwitcher />}
           <button
             className="header__burger"

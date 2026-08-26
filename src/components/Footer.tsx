@@ -20,6 +20,13 @@ function Footer() {
 					 <a href="/" className="footer__logo">
 						<img src={logo} alt="Niktel" />
 					</a>
+					<div className="footer__mobile-text">
+						{t('Мы\u00A0делаем сложные системы простыми')}
+						<br />
+						{t('и\u00A0удобными для\u00A0Заказчика')}
+						<br />
+						{t('и\u00A0без бюрократии')}
+					</div>
 					<div className="footer__contacts">
 						<a href="tel:+74992815535">+7 (499) 281-55-35</a>
 						<a href="mailto:Team@niktel.ru">team@niktel.ru</a>
@@ -32,7 +39,7 @@ function Footer() {
 					<div className="footer__column">
 						<div className='footer__title'>{t("Навигация")}</div>
 						<ul>
-							<li><a href="#company">{t("О компании")}</a></li>
+							<li><a href="#company">{t("О\u00A0компании")}</a></li>
 							<li><a href="#competence">{t("Наши компетенции")}</a></li>
 							<li><a href="#contacts">{t("Контакты")}</a></li>
 						</ul>

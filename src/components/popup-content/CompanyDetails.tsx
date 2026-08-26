@@ -15,15 +15,16 @@ function CompanyDetails() {
   };
 
   return (
-	<>
-		<div className="modal__title-footer">{t("Реквизиты компании")}</div>
-		<div className="modal__grid">
+	<div className="modal__columns">
+		<div className="modal__column">
+			<div className="modal__title-footer">{t("Реквизиты компании")}</div>
+			<div className="modal__grid">
 			<div className="modal__element">
 				<div className="element__suptitle">
 					{t("Полное наименование")}
 				</div>
 				<div className="element__info">
-					{t("Общество с ограниченной ответственностью «НИКТЕЛ»")}
+					{t("Общество с\u00A0ограниченной ответственностью «НИКТЕЛ»")}
 				</div>
 			</div>
 			<div className="modal__element">
@@ -39,7 +40,7 @@ function CompanyDetails() {
 					{t("Юридический адрес")}*
 				</div>
 				<div className="element__info">
-					{t("Россия, 121087 г. Москва, ул. Барклая, дом 6, строение 5, этаж 5, комната 22л")}
+					{t("Россия, 121087\u00A0г.\u00A0Москва, ул.\u00A0Барклая, дом\u00A06, строение\u00A05, этаж\u00A05, комната\u00A022л")}
 				</div>
 			</div>
 			<div className="modal__element">
@@ -55,7 +56,7 @@ function CompanyDetails() {
 					{t("Фактический адрес")}
 				</div>
 				<div className="element__info">
-					{t("Россия, 121087 г. Москва, ул. Барклая, дом 6, строение 5, этаж 5, комната 22л")}
+					{t("Россия, 121087\u00A0г.\u00A0Москва, ул.\u00A0Барклая, дом\u00A06, строение\u00A05, этаж\u00A05, комната\u00A022л")}
 				</div>
 			</div>
 			<div className="modal__element">
@@ -100,15 +101,17 @@ function CompanyDetails() {
 			</div>
 		</div>
 
-		<div className="modal__additional">
-			{t("*Адрес который необходимо указывать в строках товарной накладной и счета-фактуры «Адрес Грузополучателя» и «Адрес Плательщика»")}
+			<div className="modal__additional">
+				{t("*Адрес который необходимо указывать в\u00A0строках товарной накладной и\u00A0счета-фактуры «Адрес Грузополучателя» и\u00A0«Адрес Плательщика»")}
+			</div>
 		</div>
 
-		<div className="modal__title-footer">{t("IT аккредитация")}</div>
-		<div className="modal__grid-2">
+		<div className="modal__column">
+			<div className="modal__title-footer">{t("IT аккредитация")}</div>
+			<div className="modal__grid-2">
 			<div className="modal__element">
 				<div className="element__suptitle">
-					{t("Коды видов деятельности в области ИТ")}*
+					{t("Коды видов деятельности в\u00A0области ИТ")}*
 				</div>
 				<div className="element__info">
 					1.01, 1.02, 1.06, 1.07, 27.01, 2.01, 4.01, 6.01, 28.01, 11.01, 11.03, 11.02 
@@ -119,7 +122,7 @@ function CompanyDetails() {
 					{t("Стоимость услуг")}
 				</div>
 				<div className="element__info">
-					{t("Стоимость решений и услуг формируется индивидуально по запросу клиента.")}
+					{t("Стоимость решений и\u00A0услуг формируется индивидуально по\u00A0запросу клиента.")}
 				</div>
 			</div>
 			<div className="modal__element">
@@ -132,19 +135,21 @@ function CompanyDetails() {
 			</div>
 			<div className="modal__element">
 				<div className="element__suptitle">
-					{t("Языки и технологии")}
+					{t("Языки и\u00A0технологии")}
 				</div>
 				<div className="element__info">
 					C, C++, Go, Java, JavaScript, JavaScript (Ember.js) / Ember.js, Jinja, Makefile, OCaml, Python, Ruby, Rust, Shell, TypeScript 
 				</div>
 			</div>
 		</div>
-			<div className="modal__additional">{t("*Приказ Минцифры от 11.05.2023 г. № 449")}</div>
-			<div className="modal__download">
-				<button className="modal__download-btn" onClick={() => handleDownload("Niktel.pdf")}>{t("Скачать в")} PDF</button>
-				<button className="modal__download-btn" onClick={() => handleDownload("Nitel.docx")}>{t("Скачать в")} DOC</button>
-			</div>
-	</>
+			<div className="modal__additional">{t("*Приказ Минцифры от\u00A011.05.2023 г. № 449")}</div>
+		</div>
+
+		<div className="modal__download">
+			<button className="modal__download-btn" onClick={() => handleDownload("Niktel.pdf")}>{t("Скачать в")} PDF</button>
+			<button className="modal__download-btn" onClick={() => handleDownload("Nitel.docx")}>{t("Скачать в")} DOC</button>
+		</div>
+	</div>
   )
 }
 

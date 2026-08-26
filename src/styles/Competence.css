@@ -43,6 +43,11 @@
 	align-items: center;
 }
 
+.competence__itservices,
+.mobile-competence__itservices {
+	display: none;
+}
+
 .competence__item {
 	display: flex;
 	flex-direction: column;
@@ -141,4 +146,78 @@
 .competence__btn:hover {
 	background-color: rgba(76, 158, 203, 1);
 	color: var(--color-tertiary);
+}
+
+.competence__mobile-header {
+	display: none;
+}
+
+@media (max-width: 1220px) {
+	.competence {
+		height: auto;
+	}
+
+	.competence__header {
+		padding: 64px 0 50px;
+	}
+
+	.competence__title {
+		font-size: 40px;
+		margin-bottom: 10px;
+	}
+	
+	.competence__subtitle {
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+
+	.competence__content {
+		padding: 45px 0 50px;
+	}
+
+	.competence__container {
+		display: none;
+	}
+
+	.competence__itservices {
+		display: block;
+	}
+}
+
+@media (max-width: 760px) {
+	.competence__header {
+		display: none;
+	}
+
+	.competence__mobile-header {
+		display: block;
+		text-align: center;
+		margin-bottom: 38px;
+	}
+
+	.competence__title {
+		margin-bottom: 10px;
+		font-size: 26px;
+		line-height: 1.1;
+		letter-spacing: 1px;
+	}
+
+	.competence__subtitle {
+		font-size: 18px;
+		line-height: 1.2;
+		letter-spacing: 1px;
+	}
+
+	.competence__itservices {
+		display: none;
+	}
+
+	.competence__content {
+		background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(/src/assets/images/background_stars2.png) no-repeat center;
+		background-size: cover;
+	}
+
+	.mobile-competence__itservices {
+		display: block;
+	}
 }

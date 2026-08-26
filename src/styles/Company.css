@@ -60,13 +60,12 @@
 	height: 280px;
 }
 
-.company__item-wrp {
-	padding: 24px 5px 49px;
+.company__item-img--mobile {
+	display: none;
 }
 
-.company__item-wrp:nth-child(2)
-{
-	padding: 24px 18px 49px;
+.company__item-wrp {
+	padding: 24px 20px 49px;
 }
 
 .company__item-title {
@@ -82,4 +81,137 @@
 	font-size: var(--text-size-sm);
 	line-height: 26px;
 	color: var(--color-secondary);
+}
+
+.company__mobile-heaer {
+	display: none;
+}
+
+@media (max-width: 1220px) {
+	.company {
+		margin-bottom: 165px;
+	}
+	.company__header {
+		padding: 64px 0 50px;
+	}
+	
+	.company__title {
+		font-size: 40px;
+		margin-bottom: 10px;
+	}
+
+	.company__subtitle {
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+
+	.company__content {
+		padding: 45px 0 50px;
+	}
+
+	.company__container {
+		flex-direction: column;
+		gap: 32px;
+	}
+
+	.company__item {
+		display: flex;
+		align-items: flex-start;
+		width: 100%;
+		height: auto;
+		min-height: 131px;
+	}
+
+	.company__item-img {
+		height: 131px;
+		width: 315px;
+		max-width: 40%;
+		flex-shrink: 0;
+		border-radius: 10px;
+	}
+
+	.company__item-img--desktop {
+		display: none;
+	}
+
+	.company__item-img--mobile {
+		display: block;
+	}
+	
+	.company__item-wrp {
+		text-align: left;
+		padding: 25px 32px 0 32px;
+	}
+
+	.company__item-title {
+		letter-spacing: 1px;
+		margin-bottom: 7px;
+	}
+
+	.company__item-subtitle {
+		line-height: 1.2;
+		letter-spacing: 0px;
+	}
+}
+
+@media (max-width: 760px) {
+	.company {
+		margin-bottom: 50px;
+	}
+
+	.company__header {
+		display: none;
+	}
+
+	.company__mobile-header {
+		display: block;
+		text-align: center;
+		margin-bottom: 38px;
+	}
+
+	.company__title {
+		margin-bottom: 10px;
+		font-size: 26px;
+		line-height: 1.1;
+		letter-spacing: 1px;
+	}
+
+	.company__subtitle {
+		font-size: 18px;
+		line-height: 1.2;
+		letter-spacing: 1px;
+	}
+	
+	.company__item {
+		flex-direction: column;
+	}
+
+	.company__item-img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+
+	.company__item-img--mobile {
+		display: none;
+	}
+	
+	.company__item-img--desktop {
+		display: block;
+	}
+
+	.company__item-wrp {
+		padding: 25px;
+		text-align: center;
+	}
+
+	.company__item-title {
+		line-height: 1.1;
+		margin-bottom: 10px;
+		font-size: 22px;
+	}
+
+	.company__item-subtitle {
+		line-height: 1.5;
+	}
 }

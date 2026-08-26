@@ -51,9 +51,10 @@ function Partners() {
 
 	return (
 		<section ref={sectionRef} className="partners" id="partners">
-			<div className="partners__title">{t("Наши партнеры и клиенты")}</div>
+			<div className="partners__title">{t("Наши партнеры и\u00A0клиенты")}</div>
 			<div className="partners__list">
 				<div className="wrapper">
+					<div className="partners__mobile-title">{t("Наши партнеры и\u00A0клиенты")}</div>
 					<div className="partners__grid">
 						{partners.map((partner, index) => (
 							<a

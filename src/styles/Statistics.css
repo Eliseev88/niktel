@@ -29,3 +29,45 @@
 	font-weight: 500;
 	font-size: var( --text-size-md);
 }
+
+@media (max-width: 1024px) {
+	.statistics {
+		height: 230px;
+	}
+
+	.statistics__item {
+		font-size: 40px;
+	}
+
+	.statistics__item > :nth-child(2) {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 760px) {
+	.statistics {
+		height: auto;
+	}
+
+	.statistics__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 20px;
+		row-gap: 25px;
+		align-items: baseline;
+		padding-top: 53px;
+		padding-bottom: 53px;
+	}
+
+	.statistics__item {
+		font-weight: 600;
+		font-size: 40px;
+		line-height: 1;
+		letter-spacing: 0px;
+	}
+
+	.statistics__item > :nth-child(2) {
+		font-size: 16px;
+		margin-top: 0;
+	}
+}

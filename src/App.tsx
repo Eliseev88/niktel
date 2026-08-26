@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import './styles/App.css'
 import Header from './components/Header'
 import Intro from './components/Intro'
@@ -10,6 +10,24 @@ import Contacts from './components/Contacts'
 import Footer from './components/Footer'
 
 function App() {
+    const hash = location.hash;
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const tryScroll = () => {
+      const el = document.querySelector(hash);
+
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        setTimeout(tryScroll, 50);
+      }
+    };
+
+    tryScroll();
+  }, [hash]);
+
   return (
     <>
       <Suspense fallback="">

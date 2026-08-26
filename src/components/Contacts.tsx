@@ -23,7 +23,7 @@ function Contacts() {
 			<section ref={contactsRef} className="contacts" id="contacts">
 				<Popup
 					title={t("Контакты")}
-					subtitle={t("Нужна консультация по ИТ-решению или инфраструктуре? Свяжитесь с нами — разберём кейс и дадим практические рекомендации")}
+					subtitle={t("Нужна консультация по\u00A0ИТ-решению или инфраструктуре? Свяжитесь с\u00A0нами — разберём кейс и\u00A0дадим практические рекомендации")}
 					description={<CompanyDetails />}
 					onBack={handleBack}
 				/>
@@ -37,12 +37,16 @@ function Contacts() {
 			<div className="wrapper">
 				<div className="contacts__title">{t("Контакты")}</div>
 				<div className="contacts__subtitle">
-					{t("Нужна консультация по ИТ-решению или инфраструктуре? Свяжитесь с нами — разберём кейс и дадим практические рекомендации")}
+					{t("Нужна консультация по\u00A0ИТ-решению или инфраструктуре? Свяжитесь с\u00A0нами — разберём кейс и\u00A0дадим практические рекомендации")}
 				</div>
 			</div>
 		</div>
 		<div className="contacts__content">
 			<div className="wrapper">
+				<div className="contacts__mobile-header">
+					<div className="contacts__title">{t("Контакты")}</div>
+					<div className="contacts__subtitle">{t("Нужна консультация по\u00A0ИТ-решению или инфраструктуре? Свяжитесь с\u00A0нами — разберём кейс и\u00A0дадим практические рекомендации")}</div>
+				</div>
 				<div className="contacts__container">
 					<div className="contacts__item">
 						<div className="contacts__box">
@@ -55,14 +59,14 @@ function Contacts() {
 						</div>
 						<div className="contacts__box">
 							<div className="contacts__suptitle">{t("Адрес")}</div>
-							<div className='contacts__info'>{t("121087 г. Москва, ул. Барклая, дом 6, строение 5, этаж 5, комната 22л")}</div>
+							<div className='contacts__info'>{t("121087\u00A0г.\u00A0Москва, ул.\u00A0Барклая, дом\u00A06, строение\u00A05, этаж\u00A05, комната\u00A022л")}</div>
 						</div>
 					</div>
 					<div className="contacts__item">
 						<div className="contacts__wrp">
 							<div>
-								<div className='contacts__text'>{t("Реквизиты компании и IT-аккредитация")}</div>
-								<div className='contacts__paragraph'>{t("Здесь размещены необходимые реквизиты и данные, подтверждающие IT-аккредитацию")}</div>
+								<div className='contacts__text'>{t("Реквизиты компании и\u00A0IT-аккредитация")}</div>
+								<div className='contacts__paragraph'>{t("Здесь размещены необходимые реквизиты и\u00A0данные, подтверждающие IT-аккредитацию")}</div>
 							</div>
 							<button className='contacts__btn' onClick={handleClick}>{t("Открыть")}</button>
 						</div>
@@ -72,6 +76,13 @@ function Contacts() {
 							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2f9d7550791e7f6085de204ddfc840cbc415f41374f18b91b1989f75e3b3a981&amp;source=constructor" width="571" height="613" frameBorder="0"></iframe>
 						</div>
 					</div>
+				</div>
+				<div className="contacts__mobile-card">
+					<div>
+						<div className='contacts__text'>{t("Реквизиты компании и\u00A0IT-аккредитация")}</div>
+						<div className='contacts__paragraph'>{t("Здесь размещены необходимые реквизиты и\u00A0данные, подтверждающие IT-аккредитацию")}</div>
+					</div>
+					<button className='contacts__btn' onClick={handleClick}>{t("Открыть")}</button>
 				</div>
 			</div>
 		</div>

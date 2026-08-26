@@ -10,12 +10,14 @@ import EngineerSystems from './popup-content/EngineerSystems.tsx';
 import InfoSecurity from './popup-content/InfoSecurity.tsx';
 import SoftwareDeveloping from './popup-content/SoftwareDeveloping.tsx';
 import Popup from './Popup.tsx';
+import ItServices from './ItServices.tsx';
+import MobileSystemIntegration from './MobileItServices.tsx';
 
 const competenceItems = [
-	{ component: SystemIntegration, src: system, alt: 'Системная интеграция', type: 'Системная интеграция', description: 'Строим целую ИТ‑инфраструктуру <br> под ключ' },
-	{ component: EngineerSystems, src: engineer, alt: 'Инженерные системы', type: 'Инженерные системы', description: 'Проектируем и монтируем структурированные кабельные системы (СКС)' },
-	{ component: InfoSecurity, src: security, alt: 'Информационная безопасность', type: 'Информационная безопасность', description: 'Аудируем инфраструктуру и информационную безопасность' },
-	{ component: SoftwareDeveloping, src: developing, alt: 'Разработка ПО', type: 'Разработка <br />ПО', description: 'Создание и развитие службы эксплуатации и технической поддержки' },
+	{ component: SystemIntegration, src: system, alt: 'Системная интеграция', type: 'Системная интеграция', description: 'Строим целую ИТ‑инфраструктуру <br> под\u00A0ключ' },
+	{ component: EngineerSystems, src: engineer, alt: 'Инженерные системы', type: 'Инженерные системы', description: 'Проектируем и\u00A0монтируем структурированные кабельные системы (СКС)' },
+	{ component: InfoSecurity, src: security, alt: 'Информационная безопасность', type: 'Информационная безопасность', description: 'Аудируем инфраструктуру и\u00A0информационную безопасность' },
+	{ component: SoftwareDeveloping, src: developing, alt: 'Разработка ПО', type: 'Разработка <br />ПО', description: 'Создание и\u00A0развитие службы эксплуатации и\u00A0технической поддержки' },
 ];
 
 function Competence() {
@@ -36,7 +38,13 @@ function Competence() {
 		const handler = (e: Event) => {
 			const { type } = (e as CustomEvent).detail || {};
 			const match = competenceItems.find((item) => item.alt.includes(type));
-			if (match) setActiveItem(match);
+			if (!match) return;
+
+			// On mobile the footer opens the accordion section instead of the
+			// popup (handled in MobileItServices.tsx).
+			if (window.matchMedia('(max-width: 760px)').matches) return;
+
+			setActiveItem(match);
 		};
 		window.addEventListener('competence:open', handler);
 		return () => window.removeEventListener('competence:open', handler);
@@ -67,8 +75,8 @@ function Competence() {
 		return (
 			<section ref={sectionRef} className="competence" id="competence">
 				<Popup
-					title={t("Наши компетенции для решения Ваших задач")}
-					subtitle={t("Работаем в соответствии с мировыми стандартами")}
+					title={t("Наши компетенции для\u00A0решения Ваших задач")}
+					subtitle={t("Работаем в\u00A0соответствии с\u00A0мировыми стандартами")}
 					description={<ActiveContent />}
 					onBack={handleBack}
 				/>
@@ -80,12 +88,16 @@ function Competence() {
 		<section ref={sectionRef} className="competence" id="competence">
 			<div className="competence__header">
 				<div className="wrapper">
-					<div className="competence__title">{t("Наши компетенции для решения Ваших задач")}</div>
-					<div className="competence__subtitle">{t("Работаем в соответствии с мировыми стандартами")}</div>
+					<div className="competence__title">{t("Наши компетенции для\u00A0решения Ваших задач")}</div>
+					<div className="competence__subtitle">{t("Работаем в\u00A0соответствии с\u00A0мировыми стандартами")}</div>
 				</div>
 			</div>
 			<div className="competence__content">
 				<div className="wrapper">
+					<div className="competence__mobile-header">
+						<div className="competence__title">{t("Наши компетенции для\u00A0решения Ваших задач")}</div>
+						<div className="competence__subtitle">{t("Работаем в\u00A0соответствии с\u00A0мировыми стандартами")}</div>
+					</div>
 					<div className="competence__container">
 						{competenceItems.map((item, index) => (
 							<div className="competence__item" key={item.alt}>
@@ -103,6 +115,12 @@ function Competence() {
 								<div className="competence__description" dangerouslySetInnerHTML={{ __html: t(item.description) }} />
 							</div>
 						))}
+					</div>
+					<div className="competence__itservices">
+						<ItServices />
+					</div>
+					<div className="mobile-competence__itservices">
+						<MobileSystemIntegration />
 					</div>
 				</div>
 			</div>

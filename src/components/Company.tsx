@@ -2,6 +2,7 @@ import '../styles/Company.css'
 import data from '../assets/images/data.png'
 import IT from '../assets/images/IT.png'
 import project from '../assets/images/projects.jpg'
+import project_resized from '../assets/images/projects_resized.png'
 import { useTranslation } from "react-i18next";
 
 function Company() {
@@ -11,32 +12,37 @@ function Company() {
 	<section className="company">
 		<div className="company__header">
 			<div className="wrapper">
-				<div className="company__title">{t("Уже 11 лет мы растём и развиваемся вместе с нашими клиентами")}</div>
-				<div className="company__subtitle">{t("Мы делаем сложные системы простыми и удобными для Заказчика и без бюрократии")}</div>
+				<div className="company__title">{t("Уже 11\u00A0лет мы\u00A0растём и\u00A0развиваемся вместе с\u00A0нашими клиентами")}</div>
+				<div className="company__subtitle">{t("Мы\u00A0делаем сложные системы простыми и\u00A0удобными для Заказчика и\u00A0без бюрократии")}</div>
 			</div>
 		</div>
 		<div className="company__content">
 			<div className="wrapper">
+				<div className="company__mobile-header">
+					<div className="company__title">{t("Уже 11\u00A0лет мы\u00A0растём и\u00A0развиваемся вместе с\u00A0нашими клиентами")}</div>
+					<div className="company__subtitle">{t("Мы\u00A0делаем сложные системы простыми и\u00A0удобными для Заказчика и\u00A0без бюрократии")}</div>
+				</div>
 				<div className="company__container">
 					<div className="company__item">
 						<img src={data} alt="Data" className="company__item-img" />
 						<div className="company__item-wrp">
 							<div className="company__item-title">{t("Big Data")}</div>
-							<div className="company__item-subtitle">{t("Внедрение, сопровождение и глубокая аналитика данных. Реализуем полный цикл работ с большими данными.")}</div>
+							<div className="company__item-subtitle">{t("Внедрение, сопровождение и\u00A0глубокая аналитика данных. Реализуем полный цикл работ с\u00A0большими данными.")}</div>
 						</div>
 					</div>
 					<div className="company__item">
 						<img src={IT} alt="IT" className="company__item-img" />
 						<div className="company__item-wrp">
-							<div className="company__item-title">{t("Ваш проводник в мире IT")}</div>
-							<div className="company__item-subtitle">{t("Построим для Вас IT-инфраструктуру любого масштаба с использованием самых современных технологий.")}</div>
+							<div className="company__item-title">{t("Ваш проводник в\u00A0мире IT")}</div>
+							<div className="company__item-subtitle">{t("Построим для\u00A0Вас IT-инфраструктуру любого масштаба с\u00A0использованием самых современных технологий.")}</div>
 						</div>
 					</div>
 					<div className="company__item">
-						<img src={project} alt="project" className="company__item-img" />
+						<img src={project} alt="project" className="company__item-img company__item-img--desktop" />
+						<img src={project_resized} alt="project" className="company__item-img company__item-img--mobile" />
 						<div className="company__item-wrp">
-							<div className="company__item-title">{t("Проекты по всему миру")}</div>
-							<div className="company__item-subtitle">{t("Благодаря накопленному опыту наши специалисты готовы реализовывать проекты в любой точке земного шара.")}</div>
+							<div className="company__item-title">{t("Проекты по\u00A0всему миру")}</div>
+							<div className="company__item-subtitle">{t("Благодаря накопленному опыту наши специалисты готовы реализовывать проекты в\u00A0любой точке земного шара.")}</div>
 						</div>
 					</div>
 				</div>

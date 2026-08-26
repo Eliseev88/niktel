@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const statisticsData = [
 	{ value: 50, suffix: '+', label: "Проектов завершено" },
-	{ value: 10, suffix: '+', label: "Лет на рынке" },
+	{ value: 10, suffix: '+', label: "Лет на\u00A0рынке" },
 	{ value: 2015, suffix: '', label: "Год основания" },
 	{ value: 24, suffix: '/7', label: "Техническая поддержка" },
 ];

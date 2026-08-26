@@ -56,6 +56,7 @@
 .modal__download {
 	display: flex;
 	gap: 15px;
+	flex-wrap: wrap;
 }
 
 .modal__download-btn {
@@ -113,4 +114,35 @@
 	font-size: var(--text-size-sm);
 	line-height: 18px;
 	letter-spacing: -0.5px;
+}
+
+@media (max-width: 1220px) {
+	.modal__columns {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: 60px;
+	}
+
+	.modal__grid,
+	.modal__grid-2 {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+}
+
+@media (max-width: 760px) {
+	.modal__columns {
+		grid-template-columns: 1fr;
+	}
+
+	.modal__download {
+		justify-content: space-between;
+		flex-wrap: nowrap;
+	}
+
+	.modal__download-btn {
+		padding: 16px 25px;
+		white-space: nowrap;
+	}
 }
