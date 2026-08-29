@@ -16,11 +16,17 @@ interface AccordionItem {
   icon: 'integration' | 'cable' | 'security' | 'software';
 }
 
+interface AccordionContent {
+  title: string;
+  items: string[];
+  style?: Record<string, string | number>
+}
+
 const accordionItems: AccordionItem[] = [
   {
     id: 'integration',
     title: 'Системная интеграция',
-    subtitle: 'Строим целую ИТ-инфраструктуру под\u00A0ключ.',
+    subtitle: 'Строим целую ИТ\u2011инфраструктуру под\u00A0ключ.',
     icon: 'integration',
   },
   {
@@ -43,16 +49,16 @@ const accordionItems: AccordionItem[] = [
   },
 ];
 
-const integrationContent = [
+const integrationContent: AccordionContent[] = [
   {
     title:
-      'Проектирование и\u00A0внедрение информационных систем с\u00A0созданием программно-аппаратного комплекса (ПАК) от\u00A0уровня отдельной информационной системы до\u00A0уровня ЦОД в\u00A0целом',
+      'Проектирование и\u00A0внедрение информационных систем с\u00A0созданием программно\u2011аппаратного комплекса (ПАК) от\u00A0уровня отдельной информационной системы до\u00A0уровня ЦОД в\u00A0целом',
     items: [
       'системы серверной виртуализации',
       'решения по\u00A0виртуализации рабочих мест (VDI)',
       'обеспечение гарантированной отказоустойчивости приложений — репликация данных, резервный ЦОД, распределенный ЦОД — разработка архитектуры, подбор технологий, сравнительный анализ технических решений',
       'системы обеспечения отказоустойчивости',
-      'создание архитектуры систем, обеспечивающих работу с\u00A0высокой нагрузкой"',
+      'создание архитектуры систем, обеспечивающих работу с\u00A0высокой нагрузкой',
     ],
   },
   {
@@ -87,7 +93,7 @@ const integrationContent = [
   },
 ];
 
-const engineeringContent = [
+const engineeringContent: AccordionContent[] = [
   {
     title:
       'Полный комплекс услуг',
@@ -96,10 +102,11 @@ const engineeringContent = [
       'Умеем модернизировать существующие системы, дорабатывая их под\u00A0изменившиеся нужды Заказчика.',
       'Если вам нужны решения в\u00A0области контроля доступа — мы можем предложить комплексное решение, интегрированное с\u00A0системой двухфакторной аутентификации для\u00A0доступа к\u00A0ИТ инфраструктуре.'
     ],
+    style: { '--li-content':  '-', '--margin': 0}
   },
 ];
 
-const securityContent = [
+const securityContent: AccordionContent[] = [
   {
     title:
       'Проведение аудита ИТ и\u00A0ИБ',
@@ -112,7 +119,7 @@ const securityContent = [
   },
 ];
 
-const softwareContent = [
+const softwareContent: AccordionContent[] = [
   {
     title:
       'Организация команды эксплуатации/технической поддержки информационной системы (ИС, Продукт), включая:',
@@ -127,7 +134,7 @@ const softwareContent = [
     title:
       'Концептуальная разработка',
     items: [
-      'анализ бизнес-процессов, определение концепции и\u00A0стратегии развития ИТ',
+      'анализ бизнес\u2011процессов, определение концепции и\u00A0стратегии развития ИТ',
       'создание концепций и\u00A0программ развития ИТ'
     ]
   }
@@ -350,9 +357,9 @@ export const MobileSystemIntegration = ({
                         {t(block.title)}
                       </h3>
 
-                      <ul className="mobile-it-services__list">
+                      <ul className="mobile-it-services__list" style={block.style}>
                         {block.items.map((text) => (
-                          <li key={text}>{t(text)}</li>
+                          <li key={text} style={block.style}>{t(text)}</li>
                         ))}
                       </ul>
                     </div>

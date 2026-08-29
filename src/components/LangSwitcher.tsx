@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, type MouseEvent } from "react";
-import RU from '../assets/images/ru.png';
-import EN from '../assets/images/en.png';
+import RU from '../assets/images/ru.webp';
+import EN from '../assets/images/en.webp';
 import '../styles/LangSwitcher.css';
 import { useTranslation } from "react-i18next";
 

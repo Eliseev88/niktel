@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import '../styles/Partners.css';
 import { useTranslation } from "react-i18next";
-import softline from '../assets/images/logos/softline.png';
-import gpb from '../assets/images/logos/gpb.png';
-import dell from '../assets/images/logos/dell.png';
-import checkpoint from '../assets/images/logos/checkpoint.png';
+import softline from '../assets/images/logos/softline.webp';
+import gpb from '../assets/images/logos/gpb.webp';
+import dell from '../assets/images/logos/dell.webp';
+import checkpoint from '../assets/images/logos/checkpoint.webp';
 import school from '../assets/images/logos/school.svg';
-import citrix from '../assets/images/logos/citrix.png';
+import citrix from '../assets/images/logos/citrix.webp';
 import mountain from '../assets/images/logos/mountain.svg';
-import vmware from '../assets/images/logos/vmware.png';
-import mikrotik from '../assets/images/logos/mikrotik.png';
-import uranium1 from '../assets/images/logos/uranium1.png';
+import vmware from '../assets/images/logos/vmware.webp';
+import mikrotik from '../assets/images/logos/mikrotik.webp';
+import uranium1 from '../assets/images/logos/uranium1.webp';
 
 const partners = [
 	{ src: softline, alt: 'Партнер 1', href: 'https://softlinegroup.com/' },

@@ -1,8 +1,8 @@
 import '../styles/Company.css'
-import data from '../assets/images/data.png'
-import IT from '../assets/images/IT.png'
-import project from '../assets/images/projects.jpg'
-import project_resized from '../assets/images/projects_resized.png'
+import data from '../assets/images/data.webp'
+import IT from '../assets/images/IT.webp'
+import project from '../assets/images/projects.webp'
+import project_resized from '../assets/images/projects_resized.webp'
 import { useTranslation } from "react-i18next";
 
 function Company() {
@@ -33,8 +33,8 @@ function Company() {
 					<div className="company__item">
 						<img src={IT} alt="IT" className="company__item-img" />
 						<div className="company__item-wrp">
-							<div className="company__item-title">{t("Ваш проводник в\u00A0мире IT")}</div>
-							<div className="company__item-subtitle">{t("Построим для\u00A0Вас IT-инфраструктуру любого масштаба с\u00A0использованием самых современных технологий.")}</div>
+							<div className="company__item-title">{t("Ваш проводник в\u00A0мире ИТ")}</div>
+							<div className="company__item-subtitle">{t("Построим для\u00A0Вас ИТ\u2011инфраструктуру любого масштаба с\u00A0использованием самых современных технологий.")}</div>
 						</div>
 					</div>
 					<div className="company__item">

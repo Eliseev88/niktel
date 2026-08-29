@@ -167,6 +167,10 @@
 }
 
 /* List */
+:root {
+  --li-content: '•';
+  --margin: 5px;
+}
 
 .mobile-it-services__list {
   margin: 0;
@@ -181,6 +185,7 @@
   font-size: 16px;
   line-height: 1.28;
   font-weight: 400;
+  margin-bottom: var(--margin);
 }
 
 .mobile-it-services__list li:last-child {
@@ -188,8 +193,8 @@
 }
 
 .mobile-it-services__list li::before {
-  content: '•';
-  margin-right: 7px;
+  content: var(--li-content);
+  margin-right: var(--margin);
 }
 
 /* Open section */
@@ -201,7 +206,6 @@
 .mobile-it-services__section--open
   .mobile-it-services__header {
   min-height: 112px;
-  padding-top: 25px;
 }
 
 /* Focus */

@@ -28,7 +28,7 @@ function SoftwareDeveloping() {
 		</div>
 		<ul className="modal__list">
 			<li className="modal__list-item">
-				{t("анализ бизнес-процессов, определение концепции и\u00A0стратегии развития ИТ")}
+				{t("анализ бизнес\u2011процессов, определение концепции и\u00A0стратегии развития ИТ")}
 			</li>
 			<li className="modal__list-item">
 				{t("создание концепций и\u00A0программ развития ИТ")}

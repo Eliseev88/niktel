@@ -21,9 +21,9 @@ function Footer() {
 						<img src={logo} alt="Niktel" />
 					</a>
 					<div className="footer__mobile-text">
-						{t('Мы\u00A0делаем сложные системы простыми')}
+						{t('Мы\u00A0делаем сложные системы простыми ')}
 						<br />
-						{t('и\u00A0удобными для\u00A0Заказчика')}
+						{t('и\u00A0удобными для\u00A0Заказчика ')}
 						<br />
 						{t('и\u00A0без бюрократии')}
 					</div>
@@ -32,7 +32,13 @@ function Footer() {
 						<a href="mailto:Team@niktel.ru">team@niktel.ru</a>
 					</div>
 					<div className="footer__copyright">
-						&copy; {year}
+						<span className='footer__details'>
+							{t('ИНН')} 7730194369
+						</span>
+						<span className='footer__details'>
+							{t('ОГРН')} 5157746309353
+						</span>
+						<div>&copy; {year}</div>
 					</div>
 				</div>
 				<div className="footer__menu">

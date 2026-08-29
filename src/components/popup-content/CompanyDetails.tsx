@@ -102,12 +102,12 @@ function CompanyDetails() {
 		</div>
 
 			<div className="modal__additional">
-				{t("*Адрес который необходимо указывать в\u00A0строках товарной накладной и\u00A0счета-фактуры «Адрес Грузополучателя» и\u00A0«Адрес Плательщика»")}
+				{t("*Адрес который необходимо указывать в\u00A0строках товарной накладной и\u00A0счета\u2011фактуры «Адрес Грузополучателя» и\u00A0«Адрес Плательщика»")}
 			</div>
 		</div>
 
 		<div className="modal__column">
-			<div className="modal__title-footer">{t("IT аккредитация")}</div>
+			<div className="modal__title-footer">{t("ИТ аккредитация")}</div>
 			<div className="modal__grid-2">
 			<div className="modal__element">
 				<div className="element__suptitle">

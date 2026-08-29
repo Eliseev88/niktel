@@ -196,6 +196,8 @@
 	.header__burger {
 		order: 1;
 		margin-left: 0;
+		width: 42px;
+		height: 42px;
 	}
 
 	.link--phone {
@@ -204,8 +206,8 @@
 		align-items: center;
 		justify-content: center;
 		flex: none;
-		width: 49px;
-		height: 49px;
+		width: 42px;
+		height: 42px;
 		border-radius: 50%;
 		background-color: rgba(0, 117, 181, 0.1);
 		margin-left: 0;
@@ -217,12 +219,22 @@
 
 	.link--phone__icon {
 		display: block;
-		width: 25px;
-		height: 25px;
+		width: 18px;
+		height: 18px;
+	}
+
+	.header__burger-icon {
+		width: 19px;
+		height: auto;
+	}
+
+	.header__burger-icon--closed {
+		width: 15px;
+		height: 15px;
 	}
 
 	.header__menu {
-		top: 69px;
+		top: 62px;
 		left: 0;
 		right: 0;
 		width: 100%;
