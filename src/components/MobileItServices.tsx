@@ -160,7 +160,7 @@ interface MobileSystemIntegrationProps {
 }
 
 export const MobileSystemIntegration = ({
-  defaultOpen = 'integration',
+  defaultOpen = null,
 }: MobileSystemIntegrationProps) => {
   const [openSection, setOpenSection] = useState<SectionId | null>(
     defaultOpen,

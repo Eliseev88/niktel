@@ -43,7 +43,7 @@
 
   /* colors */
   --color-primary: rgba(33, 33, 33, 1);
-  --color-secondary: rgba(161, 161, 176, 1);
+  --color-secondary: rgb(113 113 126);
   --color-tertiary: rgba(255, 255, 255, 1);
   --color-accent: rgba(0, 117, 181, 1);
   --color-label: rgba(0, 26, 84, 1);

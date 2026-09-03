@@ -181,7 +181,7 @@
 		font-size: 18px;
 		line-height: 1.2;
 		letter-spacing: 1px;
-		color: rgb(113 113 126);
+		color: var(--color-secondary);
 	}
 	
 	.company__item {

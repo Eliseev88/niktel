@@ -99,6 +99,7 @@
 /* Decorative background icon */
 
 .mobile-it-services__decoration {
+  display: none;
   width: 90px;
   height: 90px;
   border: 1px solid rgba(235, 234, 237, 1);
