@@ -11,6 +11,9 @@ function SoftwareDeveloping() {
 		</div>
 		<ul className="modal__list">
 			<li className="modal__list-item">
+				{t("разработка ключевых процессов взаимодействия с\u00A0Заказчиком, Потребителями, командами разработки, другими ключевыми участниками проекта")}
+			</li>
+			<li className="modal__list-item">
 				{t("организация мониторинга Продукта и\u00A0оповещения специалистов о\u00A0сбоях")}
 			</li>
 			<li className="modal__list-item">

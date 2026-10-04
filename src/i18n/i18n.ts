@@ -10,12 +10,20 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'ru',
+    // Regional codes from the browser ("en-GB", "ru-RU") resolve to these,
+    // anything else falls back to Russian.
+    supportedLngs: ['ru', 'en'],
+    load: 'languageOnly',
     debug: false,
 
     interpolation: {
       escapeValue: false,
     }
   });
+
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.lang = lng;
+});
 
 
 export default i18n;

@@ -1,8 +1,13 @@
-import { useState, useEffect, useRef, type MouseEvent } from "react";
+import { useState, useEffect, useRef, type KeyboardEvent } from "react";
 import RU from '../assets/images/ru.webp';
 import EN from '../assets/images/en.webp';
 import '../styles/LangSwitcher.css';
 import { useTranslation } from "react-i18next";
+
+const LANGUAGES = {
+	ru: { label: 'RU', icon: RU },
+	en: { label: 'EN', icon: EN },
+};
 
 type LangSwitcherProps = {
 	className?: string;
@@ -12,28 +17,11 @@ function LangSwitcher({ className }: LangSwitcherProps) {
 
 	const {i18n} = useTranslation();
 	const switcherRef = useRef<HTMLDivElement>(null);
-
-	let _currentLang = localStorage.getItem('i18nextLng');
-	const _userLanguage = window.navigator.language;
-
-	if (_currentLang === 'ru-RU' || _currentLang === 'en-EN') {
-		if (_userLanguage && _userLanguage !== 'ru-RU') {
-			_currentLang = 'EN';
-			i18n.changeLanguage(_currentLang.toLowerCase());
-		} else {
-			_currentLang = 'RU';
-		}
-	} else {
-		_currentLang = _currentLang?.toUpperCase() ?? 'EN';
-	}
-
-	const [currentLang, setCurrentLang] = useState(_currentLang);
-	const [currentIcon, setCurrentIcon] = useState(_currentLang === 'RU' ? RU : EN);
-
-	const [secondLang, setSecondLang] = useState(_currentLang === 'RU' ? 'EN' : 'RU');
-	const [secondIcon, setSecondIcon] = useState(_currentLang === 'RU' ? EN : RU);
-
 	const [isOpen, setIsOpen] = useState(false);
+
+	// Derived from i18n, so every switcher instance (header, mobile menu) stays in sync
+	const current = i18n.resolvedLanguage === 'en' ? 'en' : 'ru';
+	const other = current === 'ru' ? 'en' : 'ru';
 
 	// Close on outside click
 	useEffect(() => {
@@ -50,47 +38,40 @@ function LangSwitcher({ className }: LangSwitcherProps) {
 		};
 	}, [isOpen]);
 
-	const toggleOpen = (e: MouseEvent) => {
-		e.stopPropagation();
-		setIsOpen(prev => !prev);
-	};
-
-	const changeLanguage = (e: MouseEvent) => {
-		e.stopPropagation();
-		if (!isOpen) return;
-
-		const lang = currentLang === 'RU' ? 'EN' : 'RU';
-		setSecondLang(currentLang);
-		setCurrentLang(lang);
-
-		const icon = currentLang === 'RU' ? EN : RU;
-		setSecondIcon(currentIcon);
-		setCurrentIcon(icon);
-
-		i18n.changeLanguage(currentLang === 'RU' ? 'en' : 'ru');
+	const changeLanguage = () => {
+		i18n.changeLanguage(other);
 		setIsOpen(false);
 	};
 
+	const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+		if (e.key === 'Escape') setIsOpen(false);
+	};
+
   return (
-	<div className={["langSwitcher", className].join(' ')} ref={switcherRef}>
+	<div className={["langSwitcher", className].filter(Boolean).join(' ')} ref={switcherRef} onKeyDown={handleKeyDown}>
 		<div className="langSwitcher__wrp">
-			<button
-				className={["langSwitcher__btn", isOpen ? '__open' : ''].join(' ')}
-				onClick={toggleOpen}
-			>
-				<span className="langSwitcher__element">
-					<img src={currentIcon} alt="lang" className="langSwitcher__img"/>
-					<span>{currentLang}</span>
-				</span>
-				<span className={isOpen ? '__hr' : '__hr __invisible'}/>
-				<span
-					onClick={changeLanguage}
-					className={['langSwitcher__element', isOpen ? '__visible' : '__invisible'].join(' ')}
+			<div className={["langSwitcher__btn", isOpen ? '__open' : ''].join(' ')}>
+				<button
+					type="button"
+					className="langSwitcher__element"
+					onClick={() => setIsOpen(prev => !prev)}
+					aria-expanded={isOpen}
 				>
-					<img src={secondIcon} alt="lang" className="langSwitcher__img"/>
-					<span>{secondLang}</span>
-				</span>
-			</button>
+					<img src={LANGUAGES[current].icon} alt="" className="langSwitcher__img"/>
+					<span>{LANGUAGES[current].label}</span>
+				</button>
+				<span className={isOpen ? '__hr' : '__hr __invisible'}/>
+				{/* Disabled while collapsed, so the hidden option is not reachable with Tab */}
+				<button
+					type="button"
+					className={['langSwitcher__element', isOpen ? '__visible' : '__invisible'].join(' ')}
+					onClick={changeLanguage}
+					disabled={!isOpen}
+				>
+					<img src={LANGUAGES[other].icon} alt="" className="langSwitcher__img"/>
+					<span>{LANGUAGES[other].label}</span>
+				</button>
+			</div>
 		</div>
 
 	</div>

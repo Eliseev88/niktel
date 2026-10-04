@@ -38,6 +38,44 @@
 	background-size: cover;
 }
 
+.company__about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	margin-bottom: 50px;
+	padding: 60px 70px;
+	border-radius: 10px;
+	background-color: var(--color-tertiary);
+}
+
+.company__about-label {
+	margin-bottom: 20px;
+	font-weight: 500;
+	font-size: var(--text-size-sm);
+	line-height: 100%;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--color-accent);
+}
+
+.company__about-lead {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 1.35;
+	color: var(--color-primary);
+}
+
+.company__about-text {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-top: 36px;
+	font-size: 18px;
+	line-height: 1.6;
+	color: var(--color-secondary);
+}
+
 .company__container {
 	display: flex;
 	justify-content: space-between;
@@ -108,6 +146,17 @@
 
 	.company__content {
 		padding: 45px 0 50px;
+	}
+
+	.company__about {
+		grid-template-columns: 1fr;
+		gap: 24px;
+		margin-bottom: 32px;
+		padding: 40px;
+	}
+
+	.company__about-text {
+		padding-top: 0;
 	}
 
 	.company__container {
@@ -183,7 +232,27 @@
 		letter-spacing: 1px;
 		color: var(--color-secondary);
 	}
-	
+
+	.company__about {
+		gap: 16px;
+		padding: 25px;
+	}
+
+	.company__about-label {
+		margin-bottom: 12px;
+		font-size: 14px;
+	}
+
+	.company__about-lead {
+		font-size: 20px;
+	}
+
+	.company__about-text {
+		gap: 12px;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
 	.company__item {
 		flex-direction: column;
 	}

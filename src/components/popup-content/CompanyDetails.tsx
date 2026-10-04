@@ -130,7 +130,7 @@ function CompanyDetails() {
 					{t("Базы данных, системы, сервисы")}
 				</div>
 				<div className="element__info">
-					ClickHouse, Keycloak, KeyDB, PostgreSQL, RabbitMQ, team@niktel.ru 
+					ClickHouse, Keycloak, KeyDB, PostgreSQL, RabbitMQ
 				</div>
 			</div>
 			<div className="modal__element">
@@ -147,7 +147,7 @@ function CompanyDetails() {
 
 		<div className="modal__download">
 			<button className="modal__download-btn" onClick={() => handleDownload("Niktel.pdf")}>{t("Скачать в")} PDF</button>
-			<button className="modal__download-btn" onClick={() => handleDownload("Nitel.docx")}>{t("Скачать в")} DOC</button>
+			<button className="modal__download-btn" onClick={() => handleDownload("Niktel.docx")}>{t("Скачать в")} DOC</button>
 		</div>
 	</div>
   )
