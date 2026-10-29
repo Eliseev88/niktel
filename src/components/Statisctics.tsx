@@ -12,7 +12,7 @@ type StatisticsItem = {
 };
 
 const statisticsData: StatisticsItem[] = [
-	{ value: 50, suffix: '+', label: "Проектов завершено" },
+	{ value: 100, suffix: '+', label: "Проектов завершено" },
 	{ value: 10, suffix: '+', label: "Лет на\u00A0рынке" },
 	{ value: FOUNDATION_YEAR, suffix: '', label: "Год основания", animate: false },
 	{ value: 24, suffix: '/7', label: "Техническая поддержка" },

@@ -23,9 +23,8 @@ function Footer() {
 					<div className="footer__mobile-text">
 						{t('Мы\u00A0делаем сложные системы простыми ')}
 						<br />
-						{t('и\u00A0удобными для\u00A0Заказчика ')}
+						{t('и\u00A0удобными для\u00A0Заказчика')}
 						<br />
-						{t('и\u00A0без бюрократии')}
 					</div>
 					<div className="footer__contacts">
 						<a href="tel:+74992815535">+7 (499) 281-55-35</a>

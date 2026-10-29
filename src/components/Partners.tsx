@@ -16,6 +16,10 @@ import cyberprotect from '../assets/images/logos/cyberprotect.svg';
 import trueconf from '../assets/images/logos/trueconf.svg';
 import comptek from '../assets/images/logos/comptek.webp';
 import bontel from '../assets/images/logos/bontel.webp';
+import h2 from '../assets/images/logos/h2.svg';
+import nag from '../assets/images/logos/nag.svg';
+import proway from '../assets/images/logos/proway.svg';
+import franko from '../assets/images/logos/franko.png';
 
 // Items without `src` are rendered as a text tile with the company name.
 type LogoItem = {
@@ -28,13 +32,13 @@ const clients: LogoItem[] = [
 	{ name: 'TENEX', src: tenex, href: 'https://www.tenex.ru/' },
 	{ name: 'Росэнергоатом', src: rosenergoatom, href: 'https://www.rosenergoatom.ru/' },
 	{ name: 'ГПБ Развитие активов', src: gpb, href: 'https://raktiv.ru/' },
-	{ name: 'Н2 Инвест' },
+	{ name: 'Н2 Инвест', src: h2, href: 'https://h2invest.ru/' },
 	{ name: 'BONTEL', src: bontel, href: 'https://bontel.ru/' },
 	{ name: 'Uranium One Group', src: uranium1, href: 'https://www.uranium1.com/ru/' },
 	{ name: 'Британская высшая школа дизайна', src: school, href: 'https://britishdesign.ru/' },
 	{ name: 'Талдинская горная компания', src: mountain, href: 'https://www.tgc.ru/' },
 	{ name: 'Ipsen', src: ipsen, href: 'https://www.ipsen.com/russia/' },
-	{ name: 'Франко Сервис', href: 'http://francos.ru/' },
+	{ name: 'Франко Сервис', src: franko, href: 'http://www.francos.ru/' },
 	{ name: 'Евразийский банк развития', src: eabr, href: 'https://eabr.org/' },
 ];
 
@@ -44,9 +48,9 @@ const partners: LogoItem[] = [
 	{ name: 'Orion soft', src: orionsoft, href: 'https://orionsoft.ru/' },
 	{ name: 'Киберпротект', src: cyberprotect, href: 'https://cyberprotect.ru/' },
 	{ name: 'TrueConf', src: trueconf, href: 'https://trueconf.ru/' },
-	{ name: 'PROWAY' },
+	{ name: 'PROWAY', src: proway, href: 'https://proway.tech/' },
 	{ name: 'КомпТек', src: comptek, href: 'https://www.comptek.ru/' },
-	{ name: 'НАГ', href: 'https://nag.ru/' },
+	{ name: 'НАГ', src: nag, href: 'https://nag.ru/' },
 ];
 
 function LogoGroup({ title, items }: { title: string; items: LogoItem[] }) {

@@ -15,14 +15,14 @@ function Company() {
 		<div className="company__header">
 			<div className="wrapper">
 				<div className="company__title">{t("Уже {{count}}\u00A0лет мы\u00A0растём и\u00A0развиваемся вместе с\u00A0нашими клиентами", { count: yearsOnMarket })}</div>
-				<div className="company__subtitle">{t("Мы\u00A0делаем сложные системы простыми и\u00A0удобными для Заказчика и\u00A0без бюрократии")}</div>
+				<div className="company__subtitle">{t("Мы\u00A0делаем сложные системы простыми и\u00A0удобными для Заказчика")}</div>
 			</div>
 		</div>
 		<div className="company__content">
 			<div className="wrapper">
 				<div className="company__mobile-header">
 					<div className="company__title">{t("Уже {{count}}\u00A0лет мы\u00A0растём и\u00A0развиваемся вместе с\u00A0нашими клиентами", { count: yearsOnMarket })}</div>
-					<div className="company__subtitle">{t("Мы\u00A0делаем сложные системы простыми и\u00A0удобными для Заказчика и\u00A0без бюрократии")}</div>
+					<div className="company__subtitle">{t("Мы\u00A0делаем сложные системы простыми и\u00A0удобными для Заказчика")}</div>
 				</div>
 				<div className="company__about">
 					<div>
